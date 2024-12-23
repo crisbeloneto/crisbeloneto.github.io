@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import styles from './MainPage.module.css';
+import styles from './ProjectsPage.module.css';
 
-const MainPage = () => {
+const ProjectsPage = () => {
   const scrollContainerRef = useRef(null);
 
   const projectCards = [
@@ -32,10 +32,10 @@ const MainPage = () => {
           <div className={styles.logo}>CN DevFolio</div>
           <ul className={styles.navMenu}>
             <li className={styles.navItem}>
-              <a href="#projects">Projetos</a>
+              <a href="#projects">PROJETOS<span></span><span></span></a>
             </li>
             <li className={styles.navItem}>
-              <a href="#about">Sobre</a>
+              <a href="#about">SOBRE<span></span><span></span></a>
             </li>
           </ul>
         </nav>
@@ -77,4 +77,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default ProjectsPage;
