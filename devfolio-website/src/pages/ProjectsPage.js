@@ -12,12 +12,14 @@ const ProjectsPage = () => {
     { id: 5, title: 'Project 5', description: 'Description 5' },
   ];
 
+  const filters = ['Tudo', 'Web', 'Desktop', 'Mobile', '2D Games'];
+
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
       const scrollAmount = 300;
-      const newScrollPosition = 
+      const newScrollPosition =
         scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
-      
+
       scrollContainerRef.current.scrollTo({
         left: newScrollPosition,
         behavior: 'smooth'
@@ -42,15 +44,25 @@ const ProjectsPage = () => {
       </header>
 
       <main className={styles.mainContent}>
+        <div className={styles.filtersSection}>
+          <div className={styles.filtersList}>
+            {filters.map(filter => (
+              <span key={filter} className={styles.filterTag}>
+                {filter}
+              </span>
+            ))}
+          </div>
+        </div>
+
         <section className={styles.cardsSection}>
           <div className={styles.sliderContainer}>
-            <button 
+            <button
               className={`${styles.scrollButton} ${styles.scrollButtonLeft}`}
               onClick={() => scroll('left')}
             >
               &#8592;
             </button>
-            
+
             <div className={styles.cardsContainer} ref={scrollContainerRef}>
               {projectCards.map((card) => (
                 <div key={card.id} className={styles.card}>
@@ -60,7 +72,7 @@ const ProjectsPage = () => {
               ))}
             </div>
 
-            <button 
+            <button
               className={`${styles.scrollButton} ${styles.scrollButtonRight}`}
               onClick={() => scroll('right')}
             >

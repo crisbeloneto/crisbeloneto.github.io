@@ -159,6 +159,27 @@
     flex: 1;
     padding: 2rem;
 }
+
+.filtersList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filterTag {
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--primary-red);
+}
+
+.filterTag:hover {
+    background-color: var(--primary-red);
+    color: white;
+    cursor: pointer;
+}
   
 .cardsSection {
     width: 100%;
