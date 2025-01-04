@@ -1,11 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
-import ProjectsPage from './pages/ProjectsPage';
+import Projects from './pages/Projects';
+import { ThemeProvider } from './context/ThemeContext';
+import AboutMe from './pages/AboutMe';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<ProjectsPage />} />
-    </Routes>
+    <ThemeProvider>
+      <Routes>
+        <Route path="/" element={<Projects />} />
+        <Route path="/about" element={<AboutMe />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 

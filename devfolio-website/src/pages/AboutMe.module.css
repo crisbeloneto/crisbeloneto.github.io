@@ -1,0 +1,148 @@
+@import url('../styles/globals.css');
+
+.mainContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    margin-top: 80px;
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profileSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileInfo h1 {
+    margin: 0;
+    color: var(--text-color-dark);
+    font-size: 2.5rem;
+}
+
+.profileInfo h2 {
+    margin: 0.5rem 0 0;
+    color: var(--gray-40);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.contentSection {
+    display: grid;
+    gap: 2rem;
+}
+
+.aboutSection,
+.skillsSection,
+.contactSection {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.skillCategory h4 {
+    color: var(--text-color-dark);
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+}
+
+.skillCategory ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skillCategory li {
+    color: var(--gray-40);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.contactLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contactLinks a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.contactLinks a:hover {
+    color: var(--text-color-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navControls {
+        right: 1rem;
+    }
+
+    .profileSection {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .profileImage {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profileInfo h1 {
+        font-size: 2rem;
+    }
+
+    .profileInfo h2 {
+        font-size: 1.2rem;
+    }
+
+    .contentSection {
+        gap: 1.5rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contactLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+}

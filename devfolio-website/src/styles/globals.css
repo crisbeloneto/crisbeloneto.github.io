@@ -1,0 +1,28 @@
+:root {
+    --primary-red: #b30000;
+    --secondary-color: white;
+    --text-color-dark: #333;
+    --gray-40: #666;
+    --gray-90: #e6e6e6;
+}
+
+:root.dark-mode {
+    --primary-red: #ff4040;
+    --secondary-color: #1a1a1a;
+    --text-color-dark: #ffffff;
+    --gray-40: #b3b3b3;
+    --gray-90: #333333;
+    --background-color: #121212;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+    transition: all 0.3s ease;
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

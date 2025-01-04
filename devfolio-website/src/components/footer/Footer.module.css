@@ -1,0 +1,8 @@
+.footer {
+    background-color: var(--secondary-color);
+    box-shadow: 0 -2px 4px rgba(89, 89, 89, 0.1);
+    color: var(--text-color-dark);
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+}

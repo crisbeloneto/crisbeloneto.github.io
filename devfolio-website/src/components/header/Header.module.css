@@ -1,0 +1,163 @@
+.header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 2rem;
+}
+
+.navMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navItem a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 500;
+    padding: 10px 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.navItem a:hover {
+    color: var(--primary-red);
+}
+
+.navItem a span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Corner animations */
+.navItem a span:first-child:before,
+.navItem a span:first-child:after,
+.navItem a span:last-child:before,
+.navItem a span:last-child:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.navItem a span:first-child:before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--primary-red);
+    border-left: 2px solid var(--primary-red);
+}
+
+.navItem a span:first-child:after {
+    top: 0;
+    right: 0;
+    border-top: 2px solid var(--primary-red);
+    border-right: 2px solid var(--primary-red);
+}
+
+.navItem a span:last-child:before {
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid var(--primary-red);
+    border-left: 2px solid var(--primary-red);
+}
+
+.navItem a span:last-child:after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--primary-red);
+    border-right: 2px solid var(--primary-red);
+}
+
+.navItem a:hover span:first-child:before,
+.navItem a:hover span:first-child:after,
+.navItem a:hover span:last-child:before,
+.navItem a:hover span:last-child:after {
+    opacity: 1;
+}
+
+.navItem a:hover span:first-child:before,
+.navItem a:hover span:first-child:after {
+    top: 1px;
+}
+
+.navItem a:hover span:last-child:before,
+.navItem a:hover span:last-child:after {
+    bottom: 1px;
+}
+
+.navItem a:hover span:first-child:before,
+.navItem a:hover span:last-child:before {
+    left: 1px;
+}
+
+.navItem a:hover span:first-child:after,
+.navItem a:hover span:last-child:after {
+    right: 1px;
+}
+
+.navItem a.active {
+    color: var(--primary-red);
+}
+
+.navControls {
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    
+}
+
+.iconButton {
+    background: none;
+    
+    border: none;
+    cursor: pointer;
+    color: var(--text-color-dark);
+    font-size: 1.3rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.iconButton:hover {
+    color: var(--primary-red);
+}
+
+@media (max-width: 768px) {
+    .navControls {
+        right: 1rem;
+    }
+}
