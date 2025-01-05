@@ -6,9 +6,13 @@ export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // Check if user had a preference saved
     const saved = localStorage.getItem('theme');
-    return saved === 'dark' || false;
+    if (saved) {
+      return saved === 'dark';
+    }
+    // If no saved preference, check system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
-  
+
   const [language, setLanguage] = useState(() => {
     const saved = localStorage.getItem('language');
     return saved || 'pt';
@@ -16,22 +20,22 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     // Apply theme changes
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
     if (isDarkMode) {
       document.documentElement.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
 
   useEffect(() => {
-    // Save language preference
     localStorage.setItem('language', language);
   }, [language]);
 
   const toggleTheme = () => {
-    setIsDarkMode(prev => !prev);
+    setIsDarkMode(prevMode => !prevMode);
   };
 
   const toggleLanguage = () => {
@@ -45,4 +49,10 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};

@@ -6,10 +6,12 @@ import AboutMe from './pages/AboutMe';
 function App() {
   return (
     <ThemeProvider>
-      <Routes>
-        <Route path="/" element={<Projects />} />
-        <Route path="/about" element={<AboutMe />} />
-      </Routes>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Projects />} />
+          <Route path="/about" element={<AboutMe />} />
+        </Routes>
+      </div>
     </ThemeProvider>
   );
 }
