@@ -5,6 +5,11 @@
     --gray-40: #666666;
     --gray-90: #e6e6e6;
     --background-color: #ffffff;
+    --scroll-button-text-color: #1a1a1a;
+    --scroll-button-hover-text-color: #1a1a1a;
+    --scroll-button-hover-background-color: #f8f8f8;
+    --scroll-button-box-shadow-color: rgba(0, 0, 0, 0.2);
+    --project-card-shadow-color: rgba(102, 0, 0, 0.5);
 }
 
 html[data-theme='dark'] {
@@ -14,6 +19,11 @@ html[data-theme='dark'] {
     --gray-40: #b3b3b3;
     --gray-90: #333333;
     --background-color: #121212;
+    --scroll-button-text-color: #ffffff;
+    --scroll-button-hover-text-color: #1a1a1a;
+    --scroll-button-hover-background-color: #e6e6e6;
+    --scroll-button-box-shadow-color: #ffffff;
+    --project-card-shadow-color: #ffffff;
 }
 
 body {

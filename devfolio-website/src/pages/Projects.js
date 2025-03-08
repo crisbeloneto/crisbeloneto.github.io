@@ -11,6 +11,9 @@ const Projects = () => {
   const scrollContainerRef = useRef(null);
   const [activeFilter, setActiveFilter] = useState('Tudo');
 
+  const filters = ['Tudo', 'Web App', 'Website',
+    'Landing Page', 'Mobile', 'Desktop', 'Jogo 2D'];
+
   const projectCards = [
     {
       id: 1,
@@ -20,7 +23,7 @@ const Projects = () => {
       details: ['Um mercado digital de agronegócio que aproxima os produtores e consumidores de toda a parte do país.',
         '', 'Fiz parte da equipa de desenvolvimento desta plataforma atuando como desenvolvedor web full-stack.',
       ],
-      type: 'Web',
+      type: 'Web App',
       image: '/images/projects-images/kyonda-logo.png',
       websiteLink: 'https://kyonda.ao/'
     },
@@ -28,7 +31,7 @@ const Projects = () => {
       id: 2,
       title: 'Cnvrstn @pp',
       details: 'Aplicativo web de chat/conversação em tempo real construído com React.js no front-end e Java Spring Boot no back-end, permitindo comunicação instantânea e compartilhamento de mídia.',
-      type: 'Web',
+      type: 'Web App',
       image: '/api/placeholder/64/64',
       githubRepoLink: 'https://github.com/crisbeloneto/conversation'
     },
@@ -36,7 +39,7 @@ const Projects = () => {
       id: 3,
       title: 'Soluções Auto - Landing Page',
       details: 'Landing page para uma oficia automotiva fictícia, que presta serviços de reparação de automóveis e venda de peças.',
-      type: 'Web',
+      type: 'Landing Page',
       image: '/images/projects-images/solucoes-auto-logo.jpeg',
       websiteLink: 'https://solauto-landing-page.vercel.app/',
       githubRepoLink: 'https://github.com/netocrs/solucoesauto-landing-page'
@@ -52,7 +55,7 @@ const Projects = () => {
       id: 5,
       title: 'Klondike Solitaire',
       details: 'Jogo clássico de cartas (solitário), desenvolvido em Java, que usa dos recuros da API Java 2D para desenvolvimento de jogos e animações.',
-      type: '2D Games',
+      type: 'Jogo 2D',
       image: '/images/projects-images/klondike-game-image.png',
       githubRepoLink: 'https://github.com/netocrs/Klondike'
     },
@@ -60,13 +63,12 @@ const Projects = () => {
       id: 6,
       title: 'Snake Game',
       details: 'Jogo clássico da cobra, desenvolvido em linguegem C.',
-      type: '2D Games',
+      type: 'Jogo 2D',
       image: '/images/projects-images/snake-game-image.png',
       githubRepoLink: 'https://github.com/netocrs/SnakeGame'
     },
   ];
 
-  const filters = ['Tudo', 'Web', 'Mobile', 'Desktop', '2D Games'];
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {

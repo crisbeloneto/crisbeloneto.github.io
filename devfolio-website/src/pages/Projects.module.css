@@ -59,8 +59,9 @@
     height: 40px;
     border-radius: 50%;
     background-color: var(--secondary-color);
+    color: var(--scroll-button-text-color);
     border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px var(--scroll-button-box-shadow-color);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -71,7 +72,9 @@
 }
 
 .scrollButton:hover {
-    background-color: #f8f8f8;
+    background-color: var(--scroll-button-hover-background-color);
+    color: var(--scroll-button-hover-text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transform: scale(1.1);
 }
 
@@ -104,15 +107,11 @@
     background: var(--secondary-color);
     border-radius: 15px;
     padding: 1.5rem;
-    box-shadow: 0px 2px 4px rgba(102, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px var(--project-card-shadow-color);
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.card:hover {
-    transform: translateY(-5px);
 }
 
 .cardHeader {

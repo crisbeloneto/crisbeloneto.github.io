@@ -11,26 +11,18 @@ const AboutMe = () => {
 
             <main className={styles.mainContent}>
                 <div className={styles.profileSection}>
-                    <div className={styles.profileImage}>
-                        <img src="/api/placeholder/200/200" alt="Profile" />
-                    </div>
                     <div className={styles.profileInfo}>
-                        <h1>Crisbelo Neto</h1>
-                        <h2>Desenvolvedor Full Stack</h2>
+                        <h1>Olá, sou o Crisbelo Neto 👋</h1>
+                        <h2>Desenvolvedor de Software</h2>
+                        <p>
+                            Motivado orientado a resoluçao de problemas, hábil
+                            em tecnologias modernas de frontend e backend, com experiência
+                            prática na construção de aplicações web e APIs RESTful.
+                        </p>
                     </div>
                 </div>
 
                 <div className={styles.contentSection}>
-                    <section className={styles.aboutSection}>
-                        <h3>Sobre Mim</h3>
-                        <p>
-                            Olá! Sou um desenvolvedor full stack apaixonado por criar soluções inovadoras
-                            e experiências digitais envolventes. Com experiência em diversas tecnologias
-                            web modernas, busco constantemente aprender e evoluir na minha jornada
-                            profissional.
-                        </p>
-                    </section>
-
                     <section className={styles.skillsSection}>
                         <h3>Habilidades</h3>
                         <div className={styles.skillsGrid}>
