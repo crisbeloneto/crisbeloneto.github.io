@@ -38,7 +38,7 @@ const Projects = () => {
     {
       id: 3,
       title: 'Soluções Auto - Landing Page',
-      details: 'Landing page para uma oficia automotiva fictícia, que presta serviços de reparação de automóveis e venda de peças.',
+      details: 'Landing page para uma oficina automotiva fictícia, que presta serviços de reparação de automóveis e venda de peças.',
       type: 'Landing Page',
       image: '/images/projects-images/solucoes-auto-logo.jpeg',
       websiteLink: 'https://solauto-landing-page.vercel.app/',
@@ -133,28 +133,32 @@ const Projects = () => {
                             </Link>
                           </p>
                         )}
-                        {card.websiteLink && (
-                          <Link className={styles.projectSitesLink} to={card.websiteLink} target="_blank" rel="noopener noreferrer">
-                            <TbWorldWww title="Visitar site" />
-                          </Link>
-                        )}
-                        {card.githubRepoLink && (
-                          <Link className={styles.projectSitesLink} to={card.githubRepoLink} target="_blank" rel="noopener noreferrer">
-                            <FaGithub title="Ver repositório github deste projeto" />
-                          </Link>
-                        )}
+                        <div className={styles.projectLinks}>
+                          {card.websiteLink && (
+                            <Link className={styles.projectSitesLink} to={card.websiteLink} target="_blank" rel="noopener noreferrer">
+                              <TbWorldWww title="Visitar site" />
+                            </Link>
+                          )}
+                          {card.githubRepoLink && (
+                            <Link className={styles.projectSitesLink} to={card.githubRepoLink} target="_blank" rel="noopener noreferrer">
+                              <FaGithub title="Ver repositório github deste projeto" />
+                            </Link>
+                          )}
+                        </div>
                       </div>
                     </div>
-                    <p className={styles.projectDetails}>
-                      {Array.isArray(card.details)
-                        ? card.details.map((paragraph, index) => (
-                          <React.Fragment key={index}>
-                            {paragraph}
-                            {index < card.details.length - 1 && <br />}
-                          </React.Fragment>
-                        ))
-                        : card.details}
-                    </p>
+                    <div className={styles.projectDetailsContainer}>
+                      <p className={styles.projectDetails}>
+                        {Array.isArray(card.details)
+                          ? card.details.map((paragraph, index) => (
+                            <React.Fragment key={index}>
+                              {paragraph}
+                              {index < card.details.length - 1 && <br />}
+                            </React.Fragment>
+                          ))
+                          : card.details}
+                      </p>
+                    </div>
                   </div>
                 ))
               ) : (

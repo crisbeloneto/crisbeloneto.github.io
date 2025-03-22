@@ -135,12 +135,20 @@
     position: absolute;
     right: 2rem;
     display: flex;
-    
+}
+
+.hamburgerMenu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-dark);
 }
 
 .iconButton {
     background: none;
-    
+
     border: none;
     cursor: pointer;
     color: var(--text-color-dark);
@@ -149,11 +157,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .logo {
+        position: static;
+        margin-right: auto;
+    }
+
+    .navMenu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 999;
+        height: auto;
+        visibility: hidden;
+    }
+
+    .navMenu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navItem {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
     .navControls {
-        right: 1rem;
+        position: static;
+        margin-right: auto;
+    }
+
+    .hamburgerMenu {
+        display: block;
     }
 }
