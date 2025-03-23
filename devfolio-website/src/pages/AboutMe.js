@@ -1,9 +1,96 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { SiMysql, SiSpring, SiGit, SiDocker, SiNodedotjs, SiPython } from "react-icons/si";
+import { GrReactjs } from "react-icons/gr";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { FaJava, FaJs } from 'react-icons/fa';
+import { DiScrum, DiVisualstudio } from "react-icons/di";
+
 import styles from './AboutMe.module.css';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
+const SKILL_ICON_SIZE = 70;
+const CATEGORY_CHANGE_INTERVAL = 5000; // 5 seconds per category
+const ICON_ANIMATION_DELAY = 200; // 200ms delay between each icon animation
+
 const AboutMe = () => {
+    const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [visibleIcons, setVisibleIcons] = useState([]);
+
+    // Use useMemo to prevent recreating the array on every render
+    const skillsData = useMemo(() => [
+        {
+            category: 'Linguagem de Programação',
+            icons: [
+                { Icon: FaJava, name: 'Java' },
+                { Icon: FaJs, name: 'JavaScript' },
+                { Icon: SiPython, name: 'Python' },
+                { Icon: SiNodedotjs, name: 'Node.js' }
+            ]
+        },
+        {
+            category: 'Frameworks',
+            icons: [
+                { Icon: SiSpring, name: 'Spring' },
+                { Icon: GrReactjs, name: 'React' }
+            ]
+        },
+        {
+            category: 'Databases',
+            icons: [
+                { Icon: SiMysql, name: 'MySQL' },
+                { Icon: BiLogoPostgresql, name: 'PostgreSQL' }
+            ]
+        },
+        {
+            category: 'Ferramentas',
+            icons: [
+                { Icon: SiGit, name: 'Git' },
+                { Icon: SiDocker, name: 'Docker' },
+                { Icon: DiScrum, name: 'Scrum' },
+                { Icon: DiVisualstudio, name: 'VS Code' }
+            ]
+        }
+    ], []); // Empty dependency array means this will only be computed once
+    
+    // Handle cycling through categories
+    useEffect(() => {
+        const cycleCategory = () => {
+            // Start transition out
+            setIsTransitioning(true);
+            setVisibleIcons([]);
+
+            // After transition out completes, change category and transition back in
+            setTimeout(() => {
+                setCurrentCategoryIndex((prevIndex) =>
+                    (prevIndex + 1) % skillsData.length
+                );
+                setIsTransitioning(false);
+            }, 500); // Half of transition time for fade out
+        };
+
+        // Set interval for cycling
+        const intervalId = setInterval(cycleCategory, CATEGORY_CHANGE_INTERVAL);
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(intervalId);
+    }, [skillsData.length]);
+
+    // Handle icon animations when category changes
+    useEffect(() => {
+        if (isTransitioning) return;
+
+        const currentIcons = skillsData[currentCategoryIndex].icons;
+        setVisibleIcons([]);
+
+        // Animate icons one by one with delay
+        currentIcons.forEach((icon, index) => {
+            setTimeout(() => {
+                setVisibleIcons(prev => [...prev, index]);
+            }, index * ICON_ANIMATION_DELAY);
+        });
+    }, [currentCategoryIndex, isTransitioning, skillsData]);
 
     return (
         <div className={styles.mainContainer}>
@@ -15,7 +102,7 @@ const AboutMe = () => {
                         <h1>Olá, sou o Crisbelo Neto 👋</h1>
                         <h2>Desenvolvedor de Software</h2>
                         <p>
-                            Motivado orientado a resoluçao de problemas, hábil
+                            Motivado, orientado a resoluçao de problemas, hábil
                             em tecnologias modernas de frontend e backend, com experiência
                             prática na construção de aplicações web e APIs RESTful.
                         </p>
@@ -24,34 +111,27 @@ const AboutMe = () => {
 
                 <div className={styles.contentSection}>
                     <section className={styles.skillsSection}>
-                        <h3>Habilidades</h3>
-                        <div className={styles.skillsGrid}>
-                            <div className={styles.skillCategory}>
-                                <h4>Frontend</h4>
-                                <ul>
-                                    <li>React.js</li>
-                                    <li>JavaScript/TypeScript</li>
-                                    <li>HTML5/CSS3</li>
-                                    <li>Tailwind CSS</li>
-                                </ul>
-                            </div>
-                            <div className={styles.skillCategory}>
-                                <h4>Backend</h4>
-                                <ul>
-                                    <li>Node.js</li>
-                                    <li>Java Spring Boot</li>
-                                    <li>PostgreSQL</li>
-                                    <li>MongoDB</li>
-                                </ul>
-                            </div>
-                            <div className={styles.skillCategory}>
-                                <h4>Ferramentas</h4>
-                                <ul>
-                                    <li>Git</li>
-                                    <li>Docker</li>
-                                    <li>AWS</li>
-                                    <li>Jira</li>
-                                </ul>
+                        <div className={styles.skillsDisplay}>
+                            <div className={styles.skillCategoryContainer}>
+                                <div className={styles.skillCategory}>
+                                    <p className={`${styles.categoryLabel} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>
+                                        {skillsData[currentCategoryIndex].category}
+                                    </p>
+                                </div>
+                                <div className={styles.skillIconsContainer}>
+                                    {skillsData[currentCategoryIndex].icons.map((iconData, index) => {
+                                        const { Icon, name } = iconData;
+                                        return (
+                                            <div 
+                                                key={name} 
+                                                className={`${styles.iconWrapper} ${visibleIcons.includes(index) ? styles.slideIn : styles.hidden}`}
+                                            >
+                                                <Icon size={SKILL_ICON_SIZE} title={name} />
+                                                <span className={styles.iconLabel}>{name}</span>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </section>

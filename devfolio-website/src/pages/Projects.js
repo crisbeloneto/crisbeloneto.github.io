@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Projects.module.css';
 import { FaGithub } from 'react-icons/fa';
-import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import { TbWorldWww } from 'react-icons/tb';
+import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+
+import styles from './Projects.module.css';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 

@@ -3,8 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { LiaGlobeAfricaSolid } from "react-icons/lia";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
-import { useTheme } from '../../context/ThemeContext';
+
 import styles from './Header.module.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const Header = () => {
     const location = useLocation();
