@@ -44,8 +44,10 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <nav className={styles.navbar}>
-                <div className={styles.logo}>CN DevFolio</div>
-                
+                <div className={styles.logo}>
+                    CN DevFolio
+                </div>
+
                 <ul className={`${styles.navMenu} ${menuOpen ? styles.active : ''}`}>
                     <li className={styles.navItem}>
                         <Link
@@ -66,7 +68,7 @@ const Header = () => {
                         </Link>
                     </li>
                 </ul>
-                
+
                 <div className={styles.navControls}>
                     <button onClick={handleLanguageToggle} className={styles.iconButton} title="Mudar Idioma">
                         <LiaGlobeAfricaSolid />
@@ -75,7 +77,7 @@ const Header = () => {
                         {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
                     </button>
                 </div>
-                
+
                 <button className={styles.hamburgerMenu} onClick={toggleMenu}>
                     {menuOpen ? <IoCloseOutline /> : <IoMenuOutline />}
                 </button>

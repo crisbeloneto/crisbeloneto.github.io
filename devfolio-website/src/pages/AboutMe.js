@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { SiMysql, SiSpring, SiGit, SiDocker, SiNodedotjs, SiPython } from "react-icons/si";
+import { SiMysql, SiSpring, SiGit, SiPostman, SiPython } from "react-icons/si";
 import { GrReactjs } from "react-icons/gr";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { FaJava, FaJs } from 'react-icons/fa';
-import { DiScrum, DiVisualstudio } from "react-icons/di";
+import { FaJava, FaJs, FaAngular } from 'react-icons/fa';
+import { DiVisualstudio } from "react-icons/di";
 
 import styles from './AboutMe.module.css';
 import Header from '../components/header/Header';
@@ -21,39 +21,38 @@ const AboutMe = () => {
     // Use useMemo to prevent recreating the array on every render
     const skillsData = useMemo(() => [
         {
-            category: 'Linguagem de Programação',
+            category: 'Bases de dados',
+            icons: [
+                { Icon: BiLogoPostgresql, name: 'PostgreSQL' },
+                { Icon: SiMysql, name: 'MySQL' }
+            ]
+        },
+        {
+            category: 'Linguagens de Programação',
             icons: [
                 { Icon: FaJava, name: 'Java' },
                 { Icon: FaJs, name: 'JavaScript' },
-                { Icon: SiPython, name: 'Python' },
-                { Icon: SiNodedotjs, name: 'Node.js' }
+                { Icon: SiPython, name: 'Python' }
             ]
         },
         {
             category: 'Frameworks',
             icons: [
                 { Icon: SiSpring, name: 'Spring' },
-                { Icon: GrReactjs, name: 'React' }
-            ]
-        },
-        {
-            category: 'Databases',
-            icons: [
-                { Icon: SiMysql, name: 'MySQL' },
-                { Icon: BiLogoPostgresql, name: 'PostgreSQL' }
+                { Icon: GrReactjs, name: 'React' },
+                { Icon: FaAngular, name: 'Angular' }
             ]
         },
         {
             category: 'Ferramentas',
             icons: [
                 { Icon: SiGit, name: 'Git' },
-                { Icon: SiDocker, name: 'Docker' },
-                { Icon: DiScrum, name: 'Scrum' },
+                { Icon: SiPostman, name: 'Postman' },
                 { Icon: DiVisualstudio, name: 'VS Code' }
             ]
         }
     ], []); // Empty dependency array means this will only be computed once
-    
+
     // Handle cycling through categories
     useEffect(() => {
         const cycleCategory = () => {
@@ -102,9 +101,8 @@ const AboutMe = () => {
                         <h1>Olá, sou o Crisbelo Neto 👋</h1>
                         <h2>Desenvolvedor de Software</h2>
                         <p>
-                            Motivado, orientado a resoluçao de problemas, hábil
-                            em tecnologias modernas de frontend e backend, com experiência
-                            prática na construção de aplicações web e APIs RESTful.
+                            Hábil em tecnologias modernas de frontend e backend, com experiência
+                            prática na construção de APIs RESTful, aplicações web e mobile "robustas" (estre aspas).
                         </p>
                     </div>
                 </div>
@@ -122,8 +120,8 @@ const AboutMe = () => {
                                     {skillsData[currentCategoryIndex].icons.map((iconData, index) => {
                                         const { Icon, name } = iconData;
                                         return (
-                                            <div 
-                                                key={name} 
+                                            <div
+                                                key={name}
                                                 className={`${styles.iconWrapper} ${visibleIcons.includes(index) ? styles.slideIn : styles.hidden}`}
                                             >
                                                 <Icon size={SKILL_ICON_SIZE} title={name} />
@@ -136,6 +134,7 @@ const AboutMe = () => {
                         </div>
                     </section>
 
+                    {/* 
                     <section className={styles.contactSection}>
                         <h3>Contato</h3>
                         <p>
@@ -148,6 +147,7 @@ const AboutMe = () => {
                             <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </section>
+                    */}
                 </div>
             </main>
 

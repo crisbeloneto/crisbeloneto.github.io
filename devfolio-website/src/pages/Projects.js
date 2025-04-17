@@ -20,24 +20,31 @@ const Projects = () => {
       id: 1,
       title: 'Kyonda',
       owner: 'CoisaDigital',
-      ownerWebsiteLink: 'https://coisadigital.ao/',
-      details: ['Um mercado digital de agronegócio que aproxima os produtores e consumidores de toda a parte do país.',
-        '', 'Fiz parte da equipa de desenvolvimento desta plataforma atuando como desenvolvedor web full-stack.',
+      ownerWebsiteLink: 'https://dreamy-tarsier-2a89fe.netlify.app/',
+      details: ['Uma bolsa de mercadorias para o setor agropecuário, com o objetivo de aproximar os produtores dos consumidores de todas as regiões do país.',
+        '', 'Atuei como parte da equipa de desenvolvimento desta plataforma, na posição de Desenvolvedor Web Full-stack.',
       ],
       type: 'Web App',
       image: '/images/projects-images/kyonda-logo.png',
-      websiteLink: 'https://kyonda.ao/'
+      websiteLink: 'https://kyonda.com/'
     },
     {
       id: 2,
       title: 'Cnvrstn @pp',
-      details: 'Aplicativo web de chat/conversação em tempo real construído com React.js no front-end e Java Spring Boot no back-end, permitindo comunicação instantânea e compartilhamento de mídia.',
+      details: 'Aplicativo web de chat/conversação em tempo real, construído com React no front-end e Java Spring Boot no back-end, permitindo comunicação instantânea e compartilhamento de mídia.',
       type: 'Web App',
       image: '/api/placeholder/64/64',
       githubRepoLink: 'https://github.com/crisbeloneto/conversation'
     },
     {
       id: 3,
+      title: 'OnlyFans',
+      details: 'Uma página web paródica para uma loja de ventiladores.',
+      type: 'Landing Page',
+      image: '/images/projects-images/onlyfans-logo.png'
+    },
+    {
+      id: 4,
       title: 'Soluções Auto - Landing Page',
       details: 'Landing page para uma oficina automotiva fictícia, que presta serviços de reparação de automóveis e venda de peças.',
       type: 'Landing Page',
@@ -46,14 +53,14 @@ const Projects = () => {
       githubRepoLink: 'https://github.com/netocrs/solucoesauto-landing-page'
     },
     {
-      id: 4,
+      id: 5,
       title: 'Desktop App',
       details: 'Aplicativo desktop desenvolvido com Electron para aumentar a produtividade, incluindo gerenciamento de tarefas e lembretes.',
       type: 'Desktop',
       image: '/api/placeholder/64/64'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Klondike Solitaire',
       details: 'Jogo clássico de cartas (solitário), desenvolvido em Java, que usa dos recuros da API Java 2D para desenvolvimento de jogos e animações.',
       type: 'Jogo 2D',
@@ -61,9 +68,9 @@ const Projects = () => {
       githubRepoLink: 'https://github.com/netocrs/Klondike'
     },
     {
-      id: 6,
+      id: 7,
       title: 'Snake Game',
-      details: 'Jogo clássico da cobra, desenvolvido em linguegem C.',
+      details: 'Jogo clássico da cobra, desenvolvido em linguagem C.',
       type: 'Jogo 2D',
       image: '/images/projects-images/snake-game-image.png',
       githubRepoLink: 'https://github.com/netocrs/SnakeGame'
