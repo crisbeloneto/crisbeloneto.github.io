@@ -30,10 +30,10 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Cnvrstn @pp',
+      title: 'Chatzinho',
       details: 'Aplicativo web de chat/conversação em tempo real, construído com React no front-end e Java Spring Boot no back-end, permitindo comunicação instantânea e compartilhamento de mídia.',
       type: 'Web App',
-      image: '/api/placeholder/64/64',
+      image: '/images/projects-images/chatzinho-logo.png',
       githubRepoLink: 'https://github.com/crisbeloneto/conversation'
     },
     {

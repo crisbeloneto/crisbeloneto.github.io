@@ -1,9 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { SiMysql, SiSpring, SiGit, SiPostman, SiPython } from "react-icons/si";
-import { GrReactjs } from "react-icons/gr";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { FaJava, FaJs, FaAngular } from 'react-icons/fa';
-import { DiVisualstudio } from "react-icons/di";
 
 import styles from './AboutMe.module.css';
 import Header from '../components/header/Header';
@@ -13,42 +8,92 @@ const SKILL_ICON_SIZE = 70;
 const CATEGORY_CHANGE_INTERVAL = 5000; // 5 seconds per category
 const ICON_ANIMATION_DELAY = 200; // 200ms delay between each icon animation
 
+const useTypewriter = (text, speed = 50, startDelay = 0, pauseDuration = 2000) => {
+    const [displayedText, setDisplayedText] = useState('');
+    const [isComplete, setIsComplete] = useState(false);
+
+    useEffect(() => {
+        if (!text) return;
+
+        let timeoutId;
+        let intervalId;
+
+        const startTyping = () => {
+            let index = 0;
+            setDisplayedText('');
+            setIsComplete(false);
+
+            intervalId = setInterval(() => {
+                if (index < text.length) {
+                    setDisplayedText(text.slice(0, index + 1));
+                    index++;
+                } else {
+                    setIsComplete(true);
+                    clearInterval(intervalId);
+
+                    // After completing, wait then restart the animation
+                    timeoutId = setTimeout(() => {
+                        startTyping();
+                    }, pauseDuration);
+                }
+            }, speed);
+        };
+
+        // Initial delay before starting
+        timeoutId = setTimeout(startTyping, startDelay);
+
+        return () => {
+            clearTimeout(timeoutId);
+            clearInterval(intervalId);
+        };
+    }, [text, speed, startDelay, pauseDuration]);
+
+    return { displayedText, isComplete };
+};
+
 const AboutMe = () => {
     const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [visibleIcons, setVisibleIcons] = useState([]);
 
-    // Use useMemo to prevent recreating the array on every render
+    // Add these typing effect hooks with infinite loop
+    const titleText = useMemo(() => "Olá, sou o Crisbelo Neto 👋", []);
+    const descriptionText = useMemo(() => "Hábil em tecnologias modernas de frontend e backend, com experiência prática em construção e integração de serviços web RESTful, e aplicações web escaláveis e robustas.", []);
+
+    const { displayedText: displayedTitle } = useTypewriter(titleText, 80, 500, 3000); // 3 second pause
+    const { displayedText: displayedDescription } = useTypewriter(descriptionText, 30, 2000, 4000); // 4 second pause
+
+    // Updated skillsData to use PNG images instead of React icons
     const skillsData = useMemo(() => [
         {
             category: 'Bases de dados',
             icons: [
-                { Icon: BiLogoPostgresql, name: 'PostgreSQL' },
-                { Icon: SiMysql, name: 'MySQL' }
+                { image: 'postgresql.png', name: 'PostgreSQL' },
+                { image: 'mysql.png', name: 'MySQL' }
             ]
         },
         {
             category: 'Linguagens de Programação',
             icons: [
-                { Icon: FaJava, name: 'Java' },
-                { Icon: FaJs, name: 'JavaScript' },
-                { Icon: SiPython, name: 'Python' }
+                { image: 'java.png', name: 'Java' },
+                { image: 'javascript.png', name: 'JavaScript' },
+                { image: 'python.png', name: 'Python' }
             ]
         },
         {
             category: 'Frameworks',
             icons: [
-                { Icon: SiSpring, name: 'Spring' },
-                { Icon: GrReactjs, name: 'React' },
-                { Icon: FaAngular, name: 'Angular' }
+                { image: 'spring-boot.png', name: 'Spring Boot' },
+                { image: 'reactjs.png', name: 'Reactjs' },
+                { image: 'angularjs.png', name: 'Angularjs' }
             ]
         },
         {
             category: 'Ferramentas',
             icons: [
-                { Icon: SiGit, name: 'Git' },
-                { Icon: SiPostman, name: 'Postman' },
-                { Icon: DiVisualstudio, name: 'VS Code' }
+                { image: 'git.png', name: 'Git' },
+                { image: 'postman.png', name: 'Postman' },
+                { image: 'vs-code.png', name: 'VS Code' }
             ]
         }
     ], []); // Empty dependency array means this will only be computed once
@@ -98,11 +143,13 @@ const AboutMe = () => {
             <main className={styles.mainContent}>
                 <div className={styles.profileSection}>
                     <div className={styles.profileInfo}>
-                        <h1>Olá, sou o Crisbelo Neto 👋</h1>
+                        <h1 className={styles.typewriter}>
+                            {displayedTitle}
+                            <span className={styles.cursor}>|</span>
+                        </h1>
                         <h2>Desenvolvedor de Software</h2>
-                        <p>
-                            Hábil em tecnologias modernas de frontend e backend, com experiência
-                            prática na construção de APIs RESTful, aplicações web e mobile "robustas" (estre aspas).
+                        <p className={styles.typewriter}>
+                            {displayedDescription}
                         </p>
                     </div>
                 </div>
@@ -118,13 +165,20 @@ const AboutMe = () => {
                                 </div>
                                 <div className={styles.skillIconsContainer}>
                                     {skillsData[currentCategoryIndex].icons.map((iconData, index) => {
-                                        const { Icon, name } = iconData;
+                                        const { image, name } = iconData;
                                         return (
                                             <div
                                                 key={name}
                                                 className={`${styles.iconWrapper} ${visibleIcons.includes(index) ? styles.slideIn : styles.hidden}`}
                                             >
-                                                <Icon size={SKILL_ICON_SIZE} title={name} />
+                                                <img
+                                                    src={`/images/tools-icons/${image}`}
+                                                    alt={name}
+                                                    title={name}
+                                                    width={SKILL_ICON_SIZE}
+                                                    height={SKILL_ICON_SIZE}
+                                                    className={styles.skillIcon}
+                                                />
                                                 <span className={styles.iconLabel}>{name}</span>
                                             </div>
                                         );

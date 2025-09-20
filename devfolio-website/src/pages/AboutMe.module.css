@@ -36,10 +36,31 @@
     font-weight: 500;
 }
 
+.cursor {
+    display: inline-block;
+    background-color: var(--text-color-dark);
+    margin-left: 2px;
+    width: 2px;
+    animation: blink 1s infinite;
+}
+
+.hideCursor {
+    animation: none;
+    opacity: 0;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
 .contentSection {
     display: grid;
 }
-
 
 .skillsSection,
 .contactSection {
@@ -92,6 +113,17 @@
     margin: 1.5rem 0 0 0;
 }
 
+.skillIcon {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.skillIcon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
 .iconWrapper {
     display: flex;
     flex-direction: column;
@@ -100,7 +132,6 @@
     transform: translateX(20px); /* Changed from -20px to 20px for right-to-left */
     opacity: 0;
     transition: all 0.5s ease;
-    
 }
 
 .iconLabel {
@@ -118,7 +149,6 @@
     transform: translateX(20px); /* Changed from -20px to 20px for right-to-left */
     opacity: 0;
 }
-
 
 .contactLinks {
     display: flex;

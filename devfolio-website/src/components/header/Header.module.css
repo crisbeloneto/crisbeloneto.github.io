@@ -24,6 +24,15 @@
     left: 2rem;
 }
 
+.logoLabel {
+    display: none;
+}
+
+.logoImage {
+    width: 8rem;
+    height: auto;
+}
+
 .navMenu {
     list-style: none;
     padding: 0;
@@ -148,7 +157,6 @@
 
 .iconButton {
     background: none;
-
     border: none;
     cursor: pointer;
     color: var(--text-color-dark);
@@ -160,6 +168,10 @@
 
 }
 
+.iconButton:hover {
+    color: var(--primary-red);
+}
+
 @media (max-width: 768px) {
     .navbar {
         justify-content: space-between;
@@ -168,7 +180,14 @@
 
     .logo {
         position: static;
-        margin-right: auto;
+    }
+
+    .logoLabel {
+        display: block;
+    }
+
+    .logoImage {
+        display: none;
     }
 
     .navMenu {
@@ -181,11 +200,11 @@
         align-items: center;
         padding: 1rem 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transform: translateY(-150%);
+        transform: translateX(150%);
         opacity: 0;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         z-index: 999;
-        height: auto;
+        height: calc(100vh - 60px);
         visibility: hidden;
     }
 
@@ -204,6 +223,7 @@
     .navControls {
         position: static;
         margin-right: auto;
+        margin-left: auto;
     }
 
     .hamburgerMenu {

@@ -45,7 +45,12 @@ const Header = () => {
         <header className={styles.header}>
             <nav className={styles.navbar}>
                 <div className={styles.logo}>
-                    CN DevFolio
+                    <span className={styles.logoLabel}> CN DevFolio </span>
+                    <img
+                        className={styles.logoImage}
+                        src="/images/website-logo/cn-devfolio-logo.png"
+                        alt="Logo"
+                    />
                 </div>
 
                 <ul className={`${styles.navMenu} ${menuOpen ? styles.active : ''}`}>

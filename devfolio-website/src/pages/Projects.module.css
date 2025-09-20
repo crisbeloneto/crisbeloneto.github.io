@@ -175,6 +175,9 @@
     font-weight: bold;
 }
 
+.owner span:hover {
+    color: var(--primary-red);
+}
 
 .projectDetailsContainer {
     flex: 1;
@@ -200,7 +203,6 @@
     margin: 0;
 }
 
-
 .projectLinks {
     display: flex;
     gap: 0.5rem;
@@ -211,6 +213,10 @@
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+}
+
+.projectSitesLink:hover {
+    color: var(--primary-red);
 }
 
 .noProjects {
