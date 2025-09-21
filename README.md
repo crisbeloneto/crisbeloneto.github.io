@@ -3,7 +3,7 @@
 
 <hr>
 
-<h4>🛠 Tools, Languages, Frameworks, and Libraries used: </h4>
+<h4>🛠 Tools, Languages, Frameworks and Libraries used: </h4>
 Language: <strong>JavaScript</strong> <br>
 Styling: <strong>CSS</strong> <br>
 Framework: <strong>Reactjs</strong> <br>
