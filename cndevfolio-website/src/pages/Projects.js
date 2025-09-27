@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { FaGithub } from 'react-icons/fa';
 import { TbWorldWww } from 'react-icons/tb';
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
@@ -9,74 +10,90 @@ import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
 const Projects = () => {
+  const { t } = useTranslation();
   const scrollContainerRef = useRef(null);
-  const [activeFilter, setActiveFilter] = useState('Tudo');
+  const [activeFilter, setActiveFilter] = useState(t('projects.filters.all'));
 
-  const filters = ['Tudo', 'Web App', 'Website',
-    'Landing Page', 'Mobile', 'Desktop', 'Jogo 2D'];
+  const filters = useMemo(() => [
+    t('projects.filters.all'),
+    t('projects.filters.webApp'),
+    t('projects.filters.website'),
+    t('projects.filters.landingPage'),
+    t('projects.filters.mobile'),
+    t('projects.filters.desktop'),
+    t('projects.filters.game2D')
+  ], [t]);
 
-  const projectCards = [
+  const projectCards = useMemo(() => [
     {
       id: 1,
-      title: 'Kyonda',
+      title: t('projects.projectData.kyonda.title'),
       owner: 'CoisaDigital',
       ownerWebsiteLink: 'https://dreamy-tarsier-2a89fe.netlify.app/',
-      details: ['Uma bolsa de mercadorias para o setor agropecuário, com o objetivo de aproximar os produtores dos consumidores de todas as regiões do país.',
-        '', 'Atuei como parte da equipa de desenvolvimento desta plataforma, na posição de Desenvolvedor Web Full-stack.',
-      ],
-      type: 'Web App',
+      details: t('projects.projectData.kyonda.details', { returnObjects: true }),
+      type: t('projects.filters.webApp'),
       image: '/images/projects-images/kyonda-logo.png',
       websiteLink: 'https://kyonda.com/'
     },
     {
       id: 2,
-      title: 'Chatzinho',
-      details: 'Aplicativo web de chat/conversação em tempo real, construído com React no front-end e Java Spring Boot no back-end, permitindo comunicação instantânea e compartilhamento de mídia.',
-      type: 'Web App',
+      title: t('projects.projectData.chatzinho.title'),
+      details: t('projects.projectData.chatzinho.details'),
+      type: t('projects.filters.webApp'),
       image: '/images/projects-images/chatzinho-logo.png',
       githubRepoLink: 'https://github.com/crisbeloneto/conversation'
     },
     {
       id: 3,
-      title: 'OnlyFans',
-      details: 'Uma página web paródica para uma loja de ventiladores.',
-      type: 'Landing Page',
+      title: t('projects.projectData.onlyfans.title'),
+      details: t('projects.projectData.onlyfans.details'),
+      type: t('projects.filters.landingPage'),
       image: '/images/projects-images/onlyfans-logo.png'
     },
     {
       id: 4,
-      title: 'Soluções Auto - Landing Page',
-      details: 'Landing page para uma oficina automotiva fictícia, que presta serviços de reparação de automóveis e venda de peças.',
-      type: 'Landing Page',
+      title: t('projects.projectData.solucoesAuto.title'),
+      details: t('projects.projectData.solucoesAuto.details'),
+      type: t('projects.filters.landingPage'),
       image: '/images/projects-images/solucoes-auto-logo.jpeg',
       websiteLink: 'https://solauto-landing-page.vercel.app/',
       githubRepoLink: 'https://github.com/netocrs/solucoesauto-landing-page'
     },
     {
       id: 5,
-      title: 'Desktop App',
-      details: 'Aplicativo desktop desenvolvido com Electron para aumentar a produtividade, incluindo gerenciamento de tarefas e lembretes.',
-      type: 'Desktop',
+      title: t('projects.projectData.desktopApp.title'),
+      details: t('projects.projectData.desktopApp.details'),
+      type: t('projects.filters.desktop'),
       image: '/api/placeholder/64/64'
     },
     {
       id: 6,
-      title: 'Klondike Solitaire',
-      details: 'Jogo clássico de cartas (solitário), desenvolvido em Java, que usa dos recuros da API Java 2D para desenvolvimento de jogos e animações.',
-      type: 'Jogo 2D',
+      title: t('projects.projectData.klondike.title'),
+      details: t('projects.projectData.klondike.details'),
+      type: t('projects.filters.game2D'),
       image: '/images/projects-images/klondike-game-image.png',
       githubRepoLink: 'https://github.com/netocrs/Klondike'
     },
     {
       id: 7,
-      title: 'Snake Game',
-      details: 'Jogo clássico da cobra, desenvolvido em linguagem C.',
-      type: 'Jogo 2D',
+      title: t('projects.projectData.snakeGame.title'),
+      details: t('projects.projectData.snakeGame.details'),
+      type: t('projects.filters.game2D'),
       image: '/images/projects-images/snake-game-image.png',
       githubRepoLink: 'https://github.com/netocrs/SnakeGame'
-    },
-  ];
+    }
+  ], [t]);
 
+  // Update activeFilter when language changes
+  React.useEffect(() => {
+    if (activeFilter === filters[0] ||
+      activeFilter === 'Tudo' ||
+      activeFilter === 'All' ||
+      activeFilter === 'Todo' ||
+      activeFilter === 'Tout') {
+      setActiveFilter(t('projects.filters.all'));
+    }
+  }, [t, activeFilter, filters]);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -92,7 +109,7 @@ const Projects = () => {
   };
 
   const filteredProjects = () => {
-    if (activeFilter === 'Tudo') return projectCards;
+    if (activeFilter === t('projects.filters.all')) return projectCards;
     return projectCards.filter(project => project.type === activeFilter);
   };
 
@@ -135,8 +152,8 @@ const Projects = () => {
                         <h3>{card.title}</h3>
                         {card.owner && (
                           <p className={styles.owner}>
-                            Proprietário: &nbsp;
-                            <Link to={card.ownerWebsiteLink} target="_blank" rel="noopener noreferrer" title="Visitar site">
+                            {t('projects.owner')} &nbsp;
+                            <Link to={card.ownerWebsiteLink} target="_blank" rel="noopener noreferrer" title={t('projects.visitSite')}>
                               <span>{card.owner}</span>
                             </Link>
                           </p>
@@ -144,12 +161,12 @@ const Projects = () => {
                         <div className={styles.projectLinks}>
                           {card.websiteLink && (
                             <Link className={styles.projectSitesLink} to={card.websiteLink} target="_blank" rel="noopener noreferrer">
-                              <TbWorldWww title="Visitar site" />
+                              <TbWorldWww title={t('projects.visitSite')} />
                             </Link>
                           )}
                           {card.githubRepoLink && (
                             <Link className={styles.projectSitesLink} to={card.githubRepoLink} target="_blank" rel="noopener noreferrer">
-                              <FaGithub title="Ver repositório github deste projeto" />
+                              <FaGithub title={t('projects.viewRepository')} />
                             </Link>
                           )}
                         </div>
@@ -171,7 +188,7 @@ const Projects = () => {
                 ))
               ) : (
                 <div className={styles.noProjects}>
-                  Sem projetos desenvolvidos para esta categoria
+                  {t('projects.noProjects')}
                 </div>
               )}
             </div>

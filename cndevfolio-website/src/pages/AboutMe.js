@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './AboutMe.module.css';
 import Header from '../components/header/Header';
@@ -52,28 +53,29 @@ const useTypewriter = (text, speed = 50, startDelay = 0, pauseDuration = 2000) =
 };
 
 const AboutMe = () => {
+    const { t } = useTranslation();
     const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [visibleIcons, setVisibleIcons] = useState([]);
 
-    // Add these typing effect hooks with infinite loop
-    const titleText = useMemo(() => "Olá, sou o Crisbelo Neto 👋", []);
-    const descriptionText = useMemo(() => "Hábil em tecnologias modernas de frontend e backend, com experiência prática em construção e integração de serviços web RESTful, e aplicações web escaláveis e robustas.", []);
+    // Get translated texts
+    const titleText = useMemo(() => t('about.greeting'), [t]);
+    const descriptionText = useMemo(() => t('about.description'), [t]);
 
-    const { displayedText: displayedTitle } = useTypewriter(titleText, 80, 500, 3000); // 3 second pause
-    const { displayedText: displayedDescription } = useTypewriter(descriptionText, 30, 2000, 4000); // 4 second pause
+    const { displayedText: displayedTitle } = useTypewriter(titleText, 80, 500, 3000);
+    const { displayedText: displayedDescription } = useTypewriter(descriptionText, 30, 2000, 4000);
 
-    // Updated skillsData to use PNG images instead of React icons
+    // Updated skillsData with translated categories
     const skillsData = useMemo(() => [
         {
-            category: 'Bases de dados',
+            category: t('about.skillCategories.databases'),
             icons: [
                 { image: 'postgresql.png', name: 'PostgreSQL' },
                 { image: 'mysql.png', name: 'MySQL' }
             ]
         },
         {
-            category: 'Linguagens de Programação',
+            category: t('about.skillCategories.programming'),
             icons: [
                 { image: 'java.png', name: 'Java' },
                 { image: 'javascript.png', name: 'JavaScript' },
@@ -81,7 +83,7 @@ const AboutMe = () => {
             ]
         },
         {
-            category: 'Frameworks',
+            category: t('about.skillCategories.frameworks'),
             icons: [
                 { image: 'spring-boot.png', name: 'Spring Boot' },
                 { image: 'reactjs.png', name: 'Reactjs' },
@@ -89,14 +91,14 @@ const AboutMe = () => {
             ]
         },
         {
-            category: 'Ferramentas',
+            category: t('about.skillCategories.tools'),
             icons: [
                 { image: 'git.png', name: 'Git' },
                 { image: 'postman.png', name: 'Postman' },
                 { image: 'vs-code.png', name: 'VS Code' }
             ]
         }
-    ], []); // Empty dependency array means this will only be computed once
+    ], [t]);
 
     // Handle cycling through categories
     useEffect(() => {
@@ -147,7 +149,7 @@ const AboutMe = () => {
                             {displayedTitle}
                             <span className={styles.cursor}>|</span>
                         </h1>
-                        <h2>Desenvolvedor de Software</h2>
+                        <h2>{t('about.jobTitle')}</h2>
                         <p className={styles.typewriter}>
                             {displayedDescription}
                         </p>
@@ -190,10 +192,9 @@ const AboutMe = () => {
 
                     {/* 
                     <section className={styles.contactSection}>
-                        <h3>Contato</h3>
+                        <h3>{t('about.contact')}</h3>
                         <p>
-                            Estou sempre aberto a novas oportunidades e colaborações.
-                            Sinta-se à vontade para entrar em contato!
+                            {t('about.contactDescription')}
                         </p>
                         <div className={styles.contactLinks}>
                             <a href="mailto:seu-email@exemplo.com">Email</a>

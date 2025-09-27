@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LiaGlobeAfricaSolid } from "react-icons/lia";
+import { useTranslation } from 'react-i18next';
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 
 import styles from './Header.module.css';
 import { useTheme } from '../../context/ThemeContext';
+import LanguageDropdown from '../languageDropdown/LanguageDropdown';
 
 const Header = () => {
+    const { t } = useTranslation();
     const location = useLocation();
-    const { isDarkMode, toggleTheme, toggleLanguage } = useTheme();
+    const { isDarkMode, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
 
     // Handle window resize - close menu when switching to desktop view
@@ -35,12 +37,6 @@ const Header = () => {
         toggleTheme();
     };
 
-    // Language toggle handler with proper stopPropagation
-    const handleLanguageToggle = (e) => {
-        e.stopPropagation();
-        toggleLanguage();
-    };
-
     return (
         <header className={styles.header}>
             <nav className={styles.navbar}>
@@ -60,7 +56,7 @@ const Header = () => {
                             className={location.pathname === '/' ? styles.active : ''}
                             onClick={() => setMenuOpen(false)}
                         >
-                            PROJETOS<span></span><span></span>
+                            {t('header.projects')}<span></span><span></span>
                         </Link>
                     </li>
                     <li className={styles.navItem}>
@@ -69,16 +65,14 @@ const Header = () => {
                             className={location.pathname === '/about' ? styles.active : ''}
                             onClick={() => setMenuOpen(false)}
                         >
-                            SOBRE<span></span><span></span>
+                            {t('header.about')}<span></span><span></span>
                         </Link>
                     </li>
                 </ul>
 
                 <div className={styles.navControls}>
-                    <button onClick={handleLanguageToggle} className={styles.iconButton} title="Mudar Idioma">
-                        <LiaGlobeAfricaSolid />
-                    </button>
-                    <button onClick={handleThemeToggle} className={styles.iconButton} title="Mudar Tema">
+                    <LanguageDropdown />
+                    <button onClick={handleThemeToggle} className={styles.iconButton} title={t('header.changeTheme')}>
                         {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
                     </button>
                 </div>

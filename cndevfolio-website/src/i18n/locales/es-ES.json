@@ -1,0 +1,76 @@
+{
+  "header": {
+    "projects": "PROYECTOS",
+    "about": "ACERCA DE",
+    "changeLanguage": "Cambiar Idioma",
+    "changeTheme": "Cambiar Tema"
+  },
+  "about": {
+    "greeting": "Hola, soy Crisbelo Neto 👋",
+    "jobTitle": "Desarrollador de Software",
+    "description": "Hábil en tecnologías modernas de frontend y backend, con experiencia práctica en la construcción e integración de servicios web RESTful, y aplicaciones web escalables y robustas.",
+    "contact": "Contacto",
+    "contactDescription": "Siempre estoy abierto a nuevas oportunidades y colaboraciones. ¡No dudes en contactarme!",
+    "skillCategories": {
+      "databases": "Bases de datos",
+      "programming": "Lenguajes de Programación",
+      "frameworks": "Frameworks",
+      "tools": "Herramientas"
+    }
+  },
+  "projects": {
+    "filters": {
+      "all": "Todo",
+      "webApp": "App Web",
+      "website": "Sitio Web",
+      "landingPage": "Página de Aterrizaje",
+      "mobile": "Móvil",
+      "desktop": "Escritorio",
+      "game2D": "Juego 2D"
+    },
+    "owner": "Propietario:",
+    "visitSite": "Visitar sitio web",
+    "viewRepository": "Ver repositorio de GitHub de este proyecto",
+    "noProjects": "No hay proyectos desarrollados para esta categoría",
+    "projectData": {
+      "kyonda": {
+        "title": "Kyonda",
+        "details": [
+          "Una bolsa de productos básicos para el sector agropecuario, con el objetivo de acercar a los productores y consumidores de todas las regiones del país.",
+          "",
+          "Trabajé como parte del equipo de desarrollo de esta plataforma, en el puesto de Desarrollador Web Full-stack."
+        ]
+      },
+      "chatzinho": {
+        "title": "Chatzinho",
+        "details": "Aplicación web de chat/conversación en tiempo real, construida con React en el frontend y Java Spring Boot en el backend, permitiendo comunicación instantánea e intercambio de medios."
+      },
+      "onlyfans": {
+        "title": "OnlyFans",
+        "details": "Una página web parodia para una tienda de ventiladores."
+      },
+      "solucoesAuto": {
+        "title": "Soluciones Auto - Página de Aterrizaje",
+        "details": "Página de aterrizaje para un taller automotriz ficticio que brinda servicios de reparación de automóviles y venta de piezas."
+      },
+      "desktopApp": {
+        "title": "Aplicación de Escritorio",
+        "details": "Aplicación de escritorio desarrollada con Electron para aumentar la productividad, incluyendo gestión de tareas y recordatorios."
+      },
+      "klondike": {
+        "title": "Solitario Klondike",
+        "details": "Juego de cartas clásico (solitario), desarrollado en Java, utilizando recursos de la API Java 2D para desarrollo de juegos y animaciones."
+      },
+      "snakeGame": {
+        "title": "Juego de la Serpiente",
+        "details": "Juego clásico de la serpiente, desarrollado en lenguaje C."
+      }
+    }
+  },
+  "languages": {
+    "pt-PT": "Português",
+    "en-US": "English",
+    "es-ES": "Español",
+    "fr-FR": "Français"
+  }
+}

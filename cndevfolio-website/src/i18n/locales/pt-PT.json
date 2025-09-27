@@ -1,0 +1,76 @@
+{
+  "header": {
+    "projects": "PROJETOS",
+    "about": "SOBRE",
+    "changeLanguage": "Mudar Idioma",
+    "changeTheme": "Mudar Tema"
+  },
+  "about": {
+    "greeting": "Olá, sou o Crisbelo Neto 👋",
+    "jobTitle": "Desenvolvedor de Software",
+    "description": "Hábil em tecnologias modernas de frontend e backend, com experiência prática em construção e integração de serviços web RESTful, e aplicações web escaláveis e robustas.",
+    "contact": "Contato",
+    "contactDescription": "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!",
+    "skillCategories": {
+      "databases": "Bases de dados",
+      "programming": "Linguagens de Programação",
+      "frameworks": "Frameworks",
+      "tools": "Ferramentas"
+    }
+  },
+  "projects": {
+    "filters": {
+      "all": "Tudo",
+      "webApp": "Web App",
+      "website": "Website",
+      "landingPage": "Landing Page",
+      "mobile": "Mobile",
+      "desktop": "Desktop",
+      "game2D": "Jogo 2D"
+    },
+    "owner": "Proprietário:",
+    "visitSite": "Visitar site",
+    "viewRepository": "Ver repositório github deste projeto",
+    "noProjects": "Sem projetos desenvolvidos para esta categoria",
+    "projectData": {
+      "kyonda": {
+        "title": "Kyonda",
+        "details": [
+          "Uma bolsa de mercadorias para o setor agropecuário, com o objetivo de aproximar os produtores dos consumidores de todas as regiões do país.",
+          "",
+          "Atuei como parte da equipa de desenvolvimento desta plataforma, na posição de Desenvolvedor Web Full-stack."
+        ]
+      },
+      "chatzinho": {
+        "title": "Chatzinho",
+        "details": "Aplicativo web de chat/conversação em tempo real, construído com React no front-end e Java Spring Boot no back-end, permitindo comunicação instantânea e compartilhamento de mídia."
+      },
+      "onlyfans": {
+        "title": "OnlyFans",
+        "details": "Uma página web paródica para uma loja de ventiladores."
+      },
+      "solucoesAuto": {
+        "title": "Soluções Auto - Landing Page",
+        "details": "Landing page para uma oficina automotiva fictícia, que presta serviços de reparação de automóveis e venda de peças."
+      },
+      "desktopApp": {
+        "title": "Desktop App",
+        "details": "Aplicativo desktop desenvolvido com Electron para aumentar a produtividade, incluindo gerenciamento de tarefas e lembretes."
+      },
+      "klondike": {
+        "title": "Klondike Solitaire",
+        "details": "Jogo clássico de cartas (solitário), desenvolvido em Java, que usa dos recuros da API Java 2D para desenvolvimento de jogos e animações."
+      },
+      "snakeGame": {
+        "title": "Snake Game",
+        "details": "Jogo clássico da cobra, desenvolvido em linguagem C."
+      }
+    }
+  },
+  "languages": {
+    "pt-PT": "Português",
+    "en-US": "English",
+    "es-ES": "Español",
+    "fr-FR": "Français"
+  }
+}
