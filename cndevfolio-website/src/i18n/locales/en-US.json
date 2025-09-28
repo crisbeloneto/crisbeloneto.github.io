@@ -36,18 +36,18 @@
       "kyonda": {
         "title": "Kyonda",
         "details": [
-          "A commodities exchange for the agricultural sector, aiming to bring producers and consumers from all regions of the country closer together.",
+          "An ecommerce platform for the agricultural sector, aiming to connect producers with consumers from all regions of the country.",
           "",
-          "I worked as part of the development team for this platform, in the position of Full-stack Web Developer."
+          "I worked as part of the development team for this platform, in the position of Full-Stack Web Developer."
         ]
       },
       "chatzinho": {
         "title": "Chatzinho",
-        "details": "Real-time chat/conversation web application, built with React on the frontend and Java Spring Boot on the backend, enabling instant communication and media sharing."
+        "details": "Real-time chat/conversation web application, built with React on the frontend and Java + Spring Boot on the backend, enabling instant communication."
       },
       "onlyfans": {
         "title": "OnlyFans",
-        "details": "A parody web page for a fan store."
+        "details": "Web page for a fan store."
       },
       "solucoesAuto": {
         "title": "Auto Solutions - Landing Page",
@@ -66,6 +66,9 @@
         "details": "Classic snake game, developed in C language."
       }
     }
+  },
+  "footer": {
+    "paragraph": "© 2024 Crisbelo Neto. All rights reserved."
   },
   "languages": {
     "pt-PT": "Português",

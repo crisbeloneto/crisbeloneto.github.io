@@ -36,18 +36,18 @@
       "kyonda": {
         "title": "Kyonda",
         "details": [
-          "Une bourse de matières premières pour le secteur agricole, visant à rapprocher les producteurs et les consommateurs de toutes les régions du pays.",
+          "Une plateforme de commerce électronique pour le secteur agricole, visant à connecter les producteurs avec les consommateurs de toutes les régions du pays.",
           "",
-          "J'ai travaillé dans l'équipe de développement de cette plateforme, en tant que Développeur Web Full-stack."
+          "J'ai travaillé dans l'équipe de développement de cette plateforme, en tant que Développeur Web Full-Stack."
         ]
       },
       "chatzinho": {
         "title": "Chatzinho",
-        "details": "Application web de chat/conversation en temps réel, construite avec React sur le frontend et Java Spring Boot sur le backend, permettant une communication instantanée et le partage de médias."
+        "details": "Application web de chat/conversation en temps réel, construite avec React sur le frontend et Java + Spring Boot sur le backend, permettant une communication instantanée."
       },
       "onlyfans": {
         "title": "OnlyFans",
-        "details": "Une page web parodique pour un magasin de ventilateurs."
+        "details": "Page web pour un magasin de ventilateurs."
       },
       "solucoesAuto": {
         "title": "Solutions Auto - Page d'atterrissage",
@@ -66,6 +66,9 @@
         "details": "Jeu classique du serpent, développé en langage C."
       }
     }
+  },
+  "footer": {
+    "paragraph": "© 2024 Crisbelo Neto. Tous droits réservés."
   },
   "languages": {
     "pt-PT": "Português",

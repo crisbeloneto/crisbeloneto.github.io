@@ -1,10 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <footer className={styles.footer}>
-            <p>© 2024 Crisbelo Neto. Todos os direitos reservados.</p>
+            <p>{t('footer.paragraph')}</p>
         </footer>
     );
 };

@@ -52,7 +52,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: t('projects.projectData.solucoesAuto.title'),
+      title: "Soluções Auto - Landing Page",
       details: t('projects.projectData.solucoesAuto.details'),
       type: t('projects.filters.landingPage'),
       image: '/images/projects-images/solucoes-auto-logo.jpeg',
@@ -68,7 +68,7 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: t('projects.projectData.klondike.title'),
+      title: "Klondike Solitaire",
       details: t('projects.projectData.klondike.details'),
       type: t('projects.filters.game2D'),
       image: '/images/projects-images/klondike-game-image.png',
