@@ -94,7 +94,6 @@ const AboutMe = () => {
             category: t('about.skillCategories.tools'),
             icons: [
                 { image: 'git.png', name: 'Git' },
-                { image: 'postman.png', name: 'Postman' },
                 { image: 'vs-code.png', name: 'VS Code' }
             ]
         }

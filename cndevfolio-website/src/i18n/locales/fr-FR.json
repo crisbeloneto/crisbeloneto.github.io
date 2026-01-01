@@ -36,7 +36,7 @@
       "kyonda": {
         "title": "Kyonda",
         "details": [
-          "Plateforme de trading de produits angolais, créé pour faciliter la connexion entre les producteurs, les commerçants et les acheteurs, garantissant la transparence, la sécurité et l'efficacité dans toutes les transactions.",
+          "Une plateforme de vente de produits agricoles, créée pour faciliter les échanges entre producteurs, détaillants et acheteurs, garantissant transparence, sécurité et efficacité dans toutes les transactions.",
           "",
           "J'ai travaillé dans l'équipe de développement de cette plateforme, en tant que Développeur Web Full-Stack."
         ]
@@ -68,7 +68,7 @@
     }
   },
   "footer": {
-    "paragraph": "© 2024 Crisbelo Neto. Tous droits réservés."
+    "paragraph": "© 2024-{{currentYear}} Crisbelo Neto. Tous droits réservés."
   },
   "languages": {
     "pt-PT": "Português",

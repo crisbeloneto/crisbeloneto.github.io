@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            <p>{t('footer.paragraph')}</p>
+            <p>{t('footer.paragraph', { currentYear: new Date().getFullYear() })}</p>
         </footer>
     );
 };

@@ -36,7 +36,7 @@
       "kyonda": {
         "title": "Kyonda",
         "details": [
-          "Angolan goods trading platform, created to facilitate the connection between producers, traders and buyers, ensuring transparency, safety and efficiency in all transactions.",
+          "A marketplace for agricultural goods, created to facilitate connections between producers, retailers, and buyers, ensuring transparency, security, and efficiency in all transactions.",
           "",
           "I worked as part of the development team for this platform, in the position of Full-Stack Web Developer."
         ]
@@ -68,7 +68,7 @@
     }
   },
   "footer": {
-    "paragraph": "© 2024 Crisbelo Neto. All rights reserved."
+    "paragraph": "© 2024-{{currentYear}} Crisbelo Neto. All rights reserved."
   },
   "languages": {
     "pt-PT": "Português",

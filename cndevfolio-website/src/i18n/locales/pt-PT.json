@@ -36,7 +36,7 @@
       "kyonda": {
         "title": "Kyonda",
         "details": [
-          "Plataforma angolana de negociação de mercadorias, criada para facilitar a ligação entre produtores, comerciantes e compradores, assegurando transparência, segurança e eficiência em todas as transações.",
+          "Marketplace de mercadorias do setor agropecuário, criada para facilitar a ligação entre produtores, comerciantes e compradores, assegurando transparência, segurança e eficiência em todas as transações.",
           "",
           "Atuei como parte da equipa de desenvolvimento desta plataforma, na posição de Desenvolvedor Web Full-Stack."
         ]
@@ -66,7 +66,7 @@
     }
   },
   "footer": {
-    "paragraph": "© 2024 Crisbelo Neto. Todos os direitos reservados."
+    "paragraph": "© 2024-{{currentYear}} Crisbelo Neto. Todos os direitos reservados."
   },
   "languages": {
     "pt-PT": "Português",

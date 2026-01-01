@@ -29,7 +29,7 @@ const Projects = () => {
       id: 1,
       title: t('projects.projectData.kyonda.title'),
       owner: 'CoisaDigital',
-      ownerWebsiteLink: 'https://dreamy-tarsier-2a89fe.netlify.app/',
+      ownerWebsiteLink: 'https://coisadigital.ao/',
       details: t('projects.projectData.kyonda.details', { returnObjects: true }),
       type: t('projects.filters.webApp'),
       image: '/images/projects-images/kyonda-logo.png',

@@ -41,7 +41,7 @@ const Header = () => {
         <header className={styles.header}>
             <nav className={styles.navbar}>
                 <div className={styles.logo}>
-                    <span className={styles.logoLabel}> CN DevFolio </span>
+                    <span className={styles.logoLabel}> CN Devfolio </span>
                     <img
                         className={styles.logoImage}
                         src="/images/website-logo/cn-devfolio-logo.png"
