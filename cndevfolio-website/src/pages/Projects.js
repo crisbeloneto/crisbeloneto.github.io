@@ -41,14 +41,17 @@ const Projects = () => {
       details: t('projects.projectData.chatzinho.details'),
       type: t('projects.filters.webApp'),
       image: '/images/projects-images/chatzinho-logo.png',
-      githubRepoLink: 'https://github.com/crisbeloneto/conversation'
+      websiteLink: 'https://chatzinhoweb.vercel.app/',
+      githubRepoLink: 'https://github.com/crisbeloneto/chatzinho'
     },
     {
       id: 3,
       title: t('projects.projectData.onlyfans.title'),
       details: t('projects.projectData.onlyfans.details'),
       type: t('projects.filters.landingPage'),
-      image: '/images/projects-images/onlyfans-logo.png'
+      image: '/images/projects-images/onlyfans-logo.png',
+      websiteLink: 'https://onlyfanslp.vercel.app/',
+      githubRepoLink: 'https://github.com/netocrs/onlyfans-lp'
     },
     {
       id: 4,

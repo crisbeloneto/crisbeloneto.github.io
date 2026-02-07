@@ -4,3 +4,9 @@
     color: var(--text-color-dark);
     text-align: center;
 }
+
+@media (max-width: 490px) {
+    .footer {
+        font-size: 0.8rem;
+    }
+}
