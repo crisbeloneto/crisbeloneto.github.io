@@ -26,6 +26,7 @@
       "landingPage": "Page d'atterrissage",
       "mobile": "Mobile",
       "desktop": "Bureau",
+      "restapi": "REST APIs",
       "game2D": "Jeu 2D"
     },
     "owner": "Propriétaire :",
@@ -56,6 +57,10 @@
       "desktopApp": {
         "title": "Application de Bureau",
         "details": "Application de bureau développée avec Electron pour augmenter la productivité, incluant la gestion des tâches et les rappels."
+      },
+      "libraryApi": {
+        "title": "Library API",
+        "details": "API REST pour un système de gestion de bibliothèque. Développée avec Java et Spring Boot, elle fournit des points de terminaison pour gérer les livres, les auteurs et les emprunteurs."
       },
       "klondike": {
         "title": "Solitaire Klondike",

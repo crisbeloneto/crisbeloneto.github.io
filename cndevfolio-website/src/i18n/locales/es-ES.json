@@ -22,11 +22,12 @@
     "filters": {
       "all": "Todo",
       "webApp": "App Web",
-      "website": "Sitio Web",
-      "landingPage": "Página de Aterrizaje",
+      "website": "Sitios Web",
+      "landingPage": "Páginas de Aterrizaje",
       "mobile": "Móvil",
       "desktop": "Escritorio",
-      "game2D": "Juego 2D"
+      "restapi": "REST APIs",
+      "game2D": "Juegos 2D"
     },
     "owner": "Propietario:",
     "visitSite": "Visitar sitio web",
@@ -56,6 +57,10 @@
       "desktopApp": {
         "title": "Aplicación de Escritorio",
         "details": "Aplicación de escritorio desarrollada con Electron para aumentar la productividad, incluyendo gestión de tareas y recordatorios."
+      },
+      "libraryApi": {
+        "title": "Library API",
+        "details": "API REST para un sistema de gestión de bibliotecas. Desarrollada con Java y Spring Boot, proporciona puntos de acceso para gestionar libros, autores y usuarios."
       },
       "klondike": {
         "title": "Solitario Klondike",

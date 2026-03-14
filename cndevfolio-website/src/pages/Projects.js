@@ -17,10 +17,11 @@ const Projects = () => {
   const filters = useMemo(() => [
     t('projects.filters.all'),
     t('projects.filters.webApp'),
-    t('projects.filters.website'),
+    /* t('projects.filters.website'), */
     t('projects.filters.landingPage'),
-    t('projects.filters.mobile'),
-    t('projects.filters.desktop'),
+    /* t('projects.filters.mobile'), */
+    /* t('projects.filters.desktop'), */
+    t('projects.filters.restapi'),
     t('projects.filters.game2D')
   ], [t]);
 
@@ -64,10 +65,11 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: t('projects.projectData.desktopApp.title'),
-      details: t('projects.projectData.desktopApp.details'),
-      type: t('projects.filters.desktop'),
-      image: '/api/placeholder/64/64'
+      title: t('projects.projectData.libraryApi.title'),
+      details: t('projects.projectData.libraryApi.details'),
+      type: t('projects.filters.restapi'),
+      image: '/images/projects-images/rest-api.png',
+      githubRepoLink: 'https://github.com/crisbeloneto/library-api'
     },
     {
       id: 6,

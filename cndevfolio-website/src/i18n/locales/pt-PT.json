@@ -21,12 +21,13 @@
   "projects": {
     "filters": {
       "all": "Tudo",
-      "webApp": "Web App",
-      "website": "Website",
-      "landingPage": "Landing Page",
+      "webApp": "Web Apps",
+      "website": "Websites",
+      "landingPage": "Landing Pages",
       "mobile": "Mobile",
       "desktop": "Desktop",
-      "game2D": "Jogo 2D"
+      "restapi": "APIs REST",
+      "game2D": "Jogos 2D"
     },
     "owner": "Proprietário:",
     "visitSite": "Visitar site",
@@ -55,6 +56,10 @@
       "desktopApp": {
         "title": "Desktop App",
         "details": "Aplicativo desktop desenvolvido com Electron para aumentar a produtividade, incluindo gerenciamento de tarefas e lembretes."
+      },
+      "libraryApi": {
+        "title": "Library API",
+        "details": "API REST para um sistema de gerenciamento de biblioteca. Desenvolvida com Java e Spring Boot, fornece endpoints para gerenciar livros, autores e utilizadores."
       },
       "klondike": {
         "details": "Jogo clássico de cartas (solitário), desenvolvido em Java, que usa dos recuros da API Java 2D para desenvolvimento de jogos e animações."

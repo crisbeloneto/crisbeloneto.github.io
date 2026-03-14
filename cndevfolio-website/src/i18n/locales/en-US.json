@@ -21,12 +21,13 @@
   "projects": {
     "filters": {
       "all": "All",
-      "webApp": "Web App",
-      "website": "Website",
-      "landingPage": "Landing Page",
+      "webApp": "Web Apps",
+      "website": "Websites",
+      "landingPage": "Landing Pages",
       "mobile": "Mobile",
       "desktop": "Desktop",
-      "game2D": "2D Game"
+      "restapi": "REST APIs",
+      "game2D": "2D Games"
     },
     "owner": "Owner:",
     "visitSite": "Visit website",
@@ -56,6 +57,10 @@
       "desktopApp": {
         "title": "Desktop App",
         "details": "Desktop application developed with Electron to increase productivity, including task management and reminders."
+      },
+      "libraryApi": {
+        "title": "Library API",
+        "details": "REST API for a library management system. Developed with Java and Spring Boot, providing endpoints for managing books, authors, and borrowers."
       },
       "klondike": {
         "title": "Klondike Solitaire",
