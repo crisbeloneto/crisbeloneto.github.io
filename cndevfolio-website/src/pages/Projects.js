@@ -17,10 +17,10 @@ const Projects = () => {
   const filters = useMemo(() => [
     t('projects.filters.all'),
     t('projects.filters.webApp'),
-    /* t('projects.filters.website'), */
+    // t('projects.filters.website'),
     t('projects.filters.landingPage'),
-    /* t('projects.filters.mobile'), */
-    /* t('projects.filters.desktop'), */
+    // t('projects.filters.mobile'),
+    // t('projects.filters.desktop'),
     t('projects.filters.restapi'),
     t('projects.filters.game2D')
   ], [t]);
@@ -43,7 +43,7 @@ const Projects = () => {
       type: t('projects.filters.webApp'),
       image: '/images/projects-images/chatzinho-logo.png',
       websiteLink: 'https://chatzinhoweb.vercel.app/',
-      githubRepoLink: 'https://github.com/crisbeloneto/chatzinho'
+      //githubRepoLink: 'https://github.com/crisbeloneto/chatzinho'
     },
     {
       id: 3,
