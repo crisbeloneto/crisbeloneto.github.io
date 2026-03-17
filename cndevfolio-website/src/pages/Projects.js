@@ -36,6 +36,7 @@ const Projects = () => {
       image: '/images/projects-images/kyonda-logo.png',
       websiteLink: 'https://kyonda.com/'
     },
+    /*
     {
       id: 2,
       title: t('projects.projectData.chatzinho.title'),
@@ -54,6 +55,7 @@ const Projects = () => {
       websiteLink: 'https://onlyfanslp.vercel.app/',
       githubRepoLink: 'https://github.com/netocrs/onlyfans-lp'
     },
+    */
     {
       id: 4,
       title: "Soluções Auto - Landing Page",
