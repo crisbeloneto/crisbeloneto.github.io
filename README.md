@@ -1,6 +1,8 @@
-# CN Devfolio
-### A static website to showcase my skills on software development, through projects I've made/created.
+<div align="left">
+<a href="https://crisbeloneto.github.io/"><img width="140" height="85" alt="Image" src="https://github.com/user-attachments/assets/075a8513-d476-4c9d-9906-b489e5451703" /></a>
+</div>
 
+### A static website to showcase my skills on software development, through projects I've made/created.
 <hr>
 
 <h3>🛠 Tools, Languages, Frameworks and Libraries used: </h3>
