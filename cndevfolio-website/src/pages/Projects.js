@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FaGithub } from 'react-icons/fa';
@@ -13,6 +13,8 @@ const Projects = () => {
   const { t } = useTranslation();
   const scrollContainerRef = useRef(null);
   const [activeFilter, setActiveFilter] = useState(t('projects.filters.all'));
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const filters = useMemo(() => [
     t('projects.filters.all'),
@@ -71,6 +73,7 @@ const Projects = () => {
       details: t('projects.projectData.libraryApi.details'),
       type: t('projects.filters.restapi'),
       image: '/images/projects-images/rest-api.png',
+      websiteLink: 'https://librarymgmtapi.onrender.com/swagger-ui.html',
       githubRepoLink: 'https://github.com/crisbeloneto/library-api'
     },
     {
@@ -101,6 +104,30 @@ const Projects = () => {
       setActiveFilter(t('projects.filters.all'));
     }
   }, [t, activeFilter, filters]);
+
+  const updateScrollButtons = useCallback(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  }, []);
+
+  // Recalculate whenever the filtered list changes or on resize
+  useEffect(() => {
+    updateScrollButtons();
+  }, [activeFilter, updateScrollButtons]);
+
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    el.addEventListener('scroll', updateScrollButtons, { passive: true });
+    const ro = new ResizeObserver(updateScrollButtons);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener('scroll', updateScrollButtons);
+      ro.disconnect();
+    };
+  }, [updateScrollButtons]);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -140,12 +167,15 @@ const Projects = () => {
 
         <section className={styles.cardsSection}>
           <div className={styles.sliderContainer}>
-            <button
-              className={`${styles.scrollButton} ${styles.scrollButtonLeft}`}
-              onClick={() => scroll('left')}
-            >
-              <IoChevronBack />
-            </button>
+            {canScrollLeft && (
+              <button
+                className={`${styles.scrollButton} ${styles.scrollButtonLeft}`}
+                onClick={() => scroll('left')}
+                title="Scroll Left"
+              >
+                <IoChevronBack />
+              </button>
+            )}
 
             <div className={styles.cardsContainer} ref={scrollContainerRef}>
               {filteredProjects().length > 0 ? (
@@ -200,12 +230,15 @@ const Projects = () => {
               )}
             </div>
 
-            <button
-              className={`${styles.scrollButton} ${styles.scrollButtonRight}`}
-              onClick={() => scroll('right')}
-            >
-              <IoChevronForward />
-            </button>
+            {canScrollRight && (
+              <button
+                className={`${styles.scrollButton} ${styles.scrollButtonRight}`}
+                onClick={() => scroll('right')}
+                title="Scroll Right"
+              >
+                <IoChevronForward />
+              </button>
+            )}
           </div>
         </section>
       </main>
