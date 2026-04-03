@@ -77,7 +77,7 @@ const Header = () => {
                     </button>
                 </div>
 
-                <button className={styles.hamburgerMenu} onClick={toggleMenu}>
+                <button className={styles.hamburgerMenu} onClick={toggleMenu} title="Hamburger Menu">
                     {menuOpen ? <IoCloseOutline /> : <IoMenuOutline />}
                 </button>
             </nav>
