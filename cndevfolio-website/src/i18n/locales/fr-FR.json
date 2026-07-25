@@ -44,7 +44,7 @@
       },
       "chatzinho": {
         "title": "Chatzinho",
-        "details": "Application web de chat/conversation en temps réel, construite avec React sur le frontend et Java + Spring Boot sur le backend, permettant une communication instantanée."
+        "details": "Une application de chat/conversation privée en ligne, mettant en scène de vraies personnes et un assistant IA, pour une communication instantanée. Développée avec React côté client et Java + Spring Boot côté serveur."
       },
       "onlyfans": {
         "title": "OnlyFans",

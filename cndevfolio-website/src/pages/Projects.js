@@ -38,7 +38,6 @@ const Projects = () => {
       image: '/images/projects-images/kyonda-logo.png',
       websiteLink: 'https://kyonda.com/'
     },
-    /*
     {
       id: 2,
       title: t('projects.projectData.chatzinho.title'),
@@ -48,6 +47,7 @@ const Projects = () => {
       websiteLink: 'https://chatzinhoweb.vercel.app/',
       //githubRepoLink: 'https://github.com/crisbeloneto/chatzinho'
     },
+    /*
     {
       id: 3,
       title: t('projects.projectData.onlyfans.title'),
